@@ -9,7 +9,7 @@ set :user,          "serveradmin@#{domain}"
 ssh_options[:forward_agent] = true
 set :git_shallow_clone, 1
 set deploy_via, :remote_cache
-set :repository,  "git@github.com:mattcampbell/auto.git"
+set :repository,  "git@github.com:mattcampbell/auto_rails.git"
 #set :optional_ext, "/rails"
 
 # If you aren't using Subversion to manage your source code, specify
