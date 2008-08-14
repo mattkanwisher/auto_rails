@@ -1,0 +1,36 @@
+mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg -u root
+
+
+/nycoding/auto(master) $ mate epa.csv 
+/nycoding/auto(master) $ mate epa.csv 
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by=\" --fields-terminated-by=, --lines-terminated-by="\r\n" auto /nycoding/auto/epa.csv  --columns=mfr,car_line,city_mpg,hwy_mpg,comb_mpg -u root
+auto.epa: Records: 1  Deleted: 0  Skipped: 0  Warnings: 1
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" auto /nycoding/auto/epa.csv  --columns=mfr,car_line,city_mpg,hwy_mpg,comb_mpg -u root
+auto.epa: Records: 1  Deleted: 0  Skipped: 0  Warnings: 1
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by=""" --fields-terminated-by=, --lines-terminated-by="\r\n" auto /nycoding/auto/epa.csv  --columns=mfr,car_line,city_mpg,hwy_mpg,comb_mpg -u root
+> 
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" auto /nycoding/auto/epa.csv  --columns=mfr,car_line,city_mpg,hwy_mpg,comb_mpg -u root
+auto.epa: Records: 1  Deleted: 0  Skipped: 0  Warnings: 1
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" auto /nycoding/auto/epa.csv  --columns=mfr,car_line,city_mpg,hwy_mpg,comb_mpg -u root
+auto.epa: Records: 1247  Deleted: 0  Skipped: 0  Warnings: 0
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg -u root
+auto.epa: Records: 1  Deleted: 0  Skipped: 0  Warnings: 1
+/nycoding/auto(master) $ mate epa.csv 
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg -u root
+auto.epa: Records: 1247  Deleted: 0  Skipped: 0  Warnings: 0
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" db41895_auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg  --user=db41895 --host external-db.s41895.gridserver.com -p db41895_auto
+Enter password: 
+mysqlimport: Error: Access denied for user 'db41895'@'%' (using password: YES), when using table: epa
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" db41895_auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg  --user=db41895@207.237.238.92 --host external-db.s41895.gridserver.com -p db41895_auto
+Enter password: 
+mysqlimport: Error: Access denied for user 'db41895@207.237.'@'207.237.238.92' (using password: YES)
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" db41895_auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg  --user=db41895@ --host external-db.s41895.gridserver.com -p db41895_auto
+Enter password: 
+mysqlimport: Error: Access denied for user 'db41895@'@'207.237.238.92' (using password: YES)
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" db41895_auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg  --user=db41895 --host external-db.s41895.gridserver.com -p db41895_auto
+Enter password: 
+mysqlimport: Error: Access denied for user 'db41895'@'%' (using password: YES), when using table: epa
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" db41895_auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg  --user=db41895 --host external-db.s41895.gridserver.com 
+mysqlimport: Error: Access denied for user 'db41895'@'207.237.238.92' (using password: NO)
+/nycoding/auto(master) $ mysqlimport --delete --fields-optionally-enclosed-by="\"" --fields-terminated-by=, --lines-terminated-by="\r\n" db41895_auto /nycoding/auto/epa.csv  --columns=year,mfr,car_line,city_mpg,hwy_mpg,comb_mpg  --user=db41895 --host external-db.s41895.gridserver.com  --force
+mysqlimport: Error: Access denied for user 'db41895'@'207.237.238.92' (using password: NO)
