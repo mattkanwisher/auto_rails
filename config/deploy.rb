@@ -8,7 +8,7 @@ set :user,          "serveradmin@#{domain}"
 
 ssh_options[:forward_agent] = true
 set :git_shallow_clone, 1
-set deploy_via, :remote_cache
+#set deploy_via, :remote_cache
 set :repository,  "git@github.com:mattcampbell/auto_rails.git"
 #set :optional_ext, "/rails"
 
