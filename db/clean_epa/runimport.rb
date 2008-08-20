@@ -13,6 +13,7 @@ mysqlcmd = "-u root  --execute=\"delete from epas\" auto"
       fullfilepath = Dir.pwd + "/" + newfile
       puts fullfilepath
       mysqlimport = "--ignore-lines=1 --fields-optionally-enclosed-by=\"\\\"\" --fields-terminated-by=, --lines-terminated-by=\"\\n\" auto #{fullfilepath}  --columns=klass,mfr,car_line,displacement,cylnder,transmission,drive_sys,@X,city_mpg,hwy_mpg,comb_mpg,@X,@X,@X,fuel_type -u root"
+      puts mysqlimport
       puts %x[mysqlimport #{mysqlimport}]
 
 

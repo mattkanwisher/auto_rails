@@ -1,0 +1,13 @@
+create database zipcodes;
+
+create table zipcodes (
+	zipcode int NOT NULL PRIMARY KEY,
+	latitude float(10,8),
+	longitude float(10,8),
+	state varchar(2),
+	city varchar(128),
+	county varchar(128)
+);
+
+
+adjust the varchar and floats params as you see fit.

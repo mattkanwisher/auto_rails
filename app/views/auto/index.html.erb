@@ -4,11 +4,24 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>Auto App</title>
-    <script src=" http://maps.google.com/?file=api&amp;v=2.x&amp;key=ABQIAAAAbRmo4XTw9K_RH-_-goiYzRRrxTHdh-tTY00J2gxt35ZZIN_MFRQv0MAprUKxiqL5knghdmJqM8S2sA"
-      type="text/javascript"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.2/prototype.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/scriptaculous.js?load=effects"></script>
+    <!-- maps api, ajax search api, map search control code -->
+    <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAbRmo4XTw9K_RH-_-goiYzRRrxTHdh-tTY00J2gxt35ZZIN_MFRQv0MAprUKxiqL5knghdmJqM8S2sA"
+        type="text/javascript"></script>
+    <script src="http://www.google.com/uds/api?file=uds.js&v=1.0&key=ABQIAAAAbRmo4XTw9K_RH-_-goiYzRRrxTHdh-tTY00J2gxt35ZZIN_MFRQv0MAprUKxiqL5knghdmJqM8S2sA"
+        type="text/javascript"></script>
+    <script src="http://www.google.com/uds/solutions/mapsearch/gsmapsearch.js"
+        type="text/javascript"></script>
 
+    <!-- ajax search stylesheet, map search stylesheet -->
+    <link href="http://www.google.com/uds/css/gsearch.css" rel="stylesheet"
+        type="text/css"/>
+    <link href="http://www.google.com/uds/solutions/mapsearch/gsmapsearch.css"
+        rel="stylesheet" type="text/css"/>
+    
+    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.2/prototype.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.1/scriptaculous.js?load=effects"></script>
+  <script src="http://www.google.com/uds/api?file=uds.js&amp;v=1.0&key=" type="text/javascript"></script>
+          
     <style type="text/css">
       body {
         font-family: Verdana, Arial, sans serif;
@@ -28,14 +41,22 @@
     var gdir;
     var geocoder = null;
     var addressMarker;
+    var searchcontrol;
 
     function initialize() {
+        //ajax apis key ABQIAAAAbRmo4XTw9K_RH-_-goiYzRRrxTHdh-tTY00J2gxt35ZZIN_MFRQv0MAprUKxiqL5knghdmJqM8S2sA
       if (GBrowserIsCompatible()) {      
         map = new GMap2(document.getElementById("map_canvas"));
         gdir = new GDirections(map, document.getElementById("directions"));
         GEvent.addListener(gdir, "addoverlay", onGDirectionsLoad);
         GEvent.addListener(gdir, "error", handleErrors);
+        
+        searchcontrol = new google.maps.LocalSearch(); 
+        map.addControl(searchcontrol);
+        //searchControl.draw(document.getElementById("searchcontrol"));
 
+        searchControl.execute("VW")
+ 
       //  setDirections("Palo Alto", "Mountain View", "en_US");
       }
     }
@@ -95,9 +116,14 @@
    document.getElementById("staticMapIMG").appendChild(img);
 
  //  document.getElementById("staticMapURL").innerHTML = baseUrl + params.join("&") + "&key=ABQIAAAAbRmo4XTw9K_RH-_-goiYzRRrxTHdh-tTY00J2gxt35ZZIN_MFRQv0MAprUKxiqL5knghdmJqM8S2sA";
-}
+    searchControl.execute("VW")}
+    
+    
+
     </script>
 
+
+    
   </head>
   <body onload="initialize()" onunload="GUnload()">
   
@@ -173,6 +199,20 @@
     
   </form>
 
+  <script type="text/javascript">
+  function LoadMapSearch() {
+    new GSmapSearchControl(
+          document.getElementById("mapsearch"),             // container
+          "1600 Amphitheatre Parkway, Mountain View, CA",   // center point
+          null                                              // options
+          );
+  }
+  /**
+   * Arrange for LoadMapSearch to run once the page loads.
+   */
+  GSearch.setOnLoadCallback(LoadMapSearch);
+  </script>
+
     <br/>
     <table class="directions">
     <tr><th>Formatted Directions</th><th>Map</th><th>Result</th></tr>
@@ -184,6 +224,8 @@
 
     </tr>
     </table> 
+    
+    <div id="mapsearch">Loading...</div>
 
  <div id="staticMapIMG" style="width: 500px; margin-left: 20px; height: 410px"></div>
 <br clear="all"/>
