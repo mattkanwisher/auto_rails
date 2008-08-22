@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>960 Grid System &mdash; Demo</title>
+<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/text.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/960.css" />
+<style type="text/css" media="all">
+
+body
+{
+	background: white;
+	color: #333;
+	font-size: 11px;
+}
+
+a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+h1
+{
+	font-family: Georgia, serif;
+	font-weight: normal;
+	text-align: center;
+}
+
+h2
+{
+	padding: 20px 0 0;
+	text-align: center;
+}
+
+p
+{
+	border: 1px solid #666;
+	overflow: hidden;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.container_12
+{
+	background: #fff url(img/12_col.gif) repeat-y;
+	margin-bottom: 20px;
+}
+
+.container_16
+{
+	background: #fff url(img/16_col.gif) repeat-y;
+}
+
+</style>
+</head>
+<body>
+	<div style="background-color:black;height:50px">
+	</div>
+	<div style="background-color:grey;height:50px">
+	</div>
+
+<div class="container_12">
+
+	<div class="grid_12" style="background-color:white">
+		<img src="/images/ttl_planyourtrip.gif" alt="Plan your trip and save on gas!" width="340" height="29" />
+	</div>
+	<div class="grid_9" style="background-color:yellow">
+		<div class="grid_5 alpha" style="background-color:white;height:301px">
+	        <table width="100%" border="0" cellspacing="7" cellpadding="5">
+	            <tr>
+	              <td><p><img src="/images/ttl_where.gif" alt="Where are you going?" width="186" height="17" /></p>
+	                  <p>
+	                    <input name="addressStart" type="text" id="addressStart" tabindex="0" value="Starting address" size="40" />
+	                  </p>
+	                <p>
+	                  <input name="addressEnd" type="text" id="addressEnd" tabindex="1" value="Destination address" size="40" />
+	                </p></td>
+	            </tr>
+	            <tr>
+	              <td><img src="/images/ttl_what.gif" alt="What are you driving?" width="186" height="17" /></td>
+	            </tr>
+	            <tr>
+	              <td><select name="year" id="year" tabindex="2">
+	                  <option selected="selected">Year</option>
+	                  <option>2009</option>
+	                  <option>etc.</option>
+	                </select>
+	                &nbsp;
+	                <select name="make" id="make" tabindex="3">
+	                  <option selected="selected">Car manufacturer</option>
+	                  <option>Honda</option>
+	                  <option>etc.</option>
+	                </select>
+	                &nbsp;
+	                <select name="model" id="model" tabindex="4">
+	                  <option selected="selected">Model</option>
+	                  <option>Accord</option>
+	                  <option>Civic</option>
+	                  <option>etc.</option>
+	                </select>              </td>
+	            </tr>
+	            <tr>
+				  <br>
+	              <td align="right"><input type="submit" name="submit" id="submit" value="Price Your Trip!" tabindex="5" /></td>
+	            </tr>
+
+	        </table>
+		</div>
+		<div class="grid_4 omega" style="background-color:green;height:50px">
+			<p>
+				60px
+			</p>
+		</div>
+	</div>
+
+	<div class="grid_6 "  style="background-color:purple;height:301px">
+		<p>
+			460px
+		</p>
+	</div>
+
+
+	<div class="clear">&nbsp;</div>
+
+	<div class="grid_12 omega"  style="background-color:brown">
+		<div class="grid_1" style="background-color:green">
+			<img src="/images/img_logo_footer.gif" alt="Logo - Stingy Trips" width="47" height="53" />
+		</div>
+		<div class="grid_3" style="background-color:green">
+	       <p>StingyTrips.com - Plan your trip and save on gas!<br />
+	        ©2008 StingyTrips, LLC. All rights reserved.</p>  
+		</div>
+		<div class="grid_3" style="background-color:green">
+		</div>
+		<div class="grid_3">
+			<a href="about.html">About Stingy Trips</a> | <a href="advertisers.html">Advertise with Us</a> | <a href="contact.html">Contact Us</a>
+		</div>
+	</div>
+</div>
+<!-- end .container_16 -->
+</body>
+</html>
