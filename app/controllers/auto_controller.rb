@@ -56,8 +56,12 @@ class AutoController < ApplicationController
       
       def to_minutes(seconds)
 
+      h = 99
+        puts "seconds #{seconds}"
        m = (seconds/60).floor
+       puts "m #{m}"
        s = (seconds - (m * 60)).round
+       puts "s #{s}"
 
        # add leading zero to one-digit minute
        if m < 10
@@ -68,6 +72,6 @@ class AutoController < ApplicationController
         s = "0#{s}"
         end
        # return formatted time
-       return "#{m}:#{s}"
+       return "#{h}:#{m}"
       end
 end
