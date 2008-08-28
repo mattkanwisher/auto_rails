@@ -11,9 +11,15 @@ class AutoController < ApplicationController
       puts "miles#{@miles}"
       puts "epa#{@epa.inspect}"
       
-      @avg_gas_price = 3.99
+      gas_stations = GasZip.find_near_lat_long(params[:searchlat],params[:searchlong])
+      puts gas_stations
+
+      @avg_gas_price = gas_stations.first.avg_price rescue 0
       @start = params["from"]
       @end = params["to"]
+      
+      
+      
 
       @fuel_eco = @epa.comb_mpg
       @cost = @avg_gas_price * (@miles / @fuel_eco)

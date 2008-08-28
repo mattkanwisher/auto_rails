@@ -81,6 +81,8 @@
     }
 
   function onGDirectionsLoad(){ 
+  $("searchlat").value = gdir.getMarker(0).getLatLng(0).lat()
+  $("searchlong").value = gdir.getMarker(0).getLatLng(0).lng()
 	$("searchmeters").value = gdir.getDistance()["meters"];
 	$("searchtime").value = gdir.getDuration()["seconds"];
 
@@ -130,6 +132,9 @@
   <h2>Auto App</h2>
   <form id="searchform" action="#" onsubmit="setDirections(this.from.value, this.to.value, this.locale.value); return false">
 
+
+	<input type="hidden" id="searchlong" name="searchlong" value="asd">
+	<input type="hidden" id="searchlat" name="searchlat" value="asd">
 	<input type="hidden" id="searchmeters" name="searchmeters" value="asd">
 	<input type="hidden" id="searchtime" name="searchtime" value="asd">
   <table>
