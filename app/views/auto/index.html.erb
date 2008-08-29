@@ -106,7 +106,7 @@ h2 {
   $("searchlat").value = gdir.getMarker(0).getLatLng(0).lat()
   $("searchlong").value = gdir.getMarker(0).getLatLng(0).lng()
 	$("searchmeters").value = gdir.getDistance()["meters"];
-  alert(  gdir.getDuration()["seconds"] );
+  //alert(  gdir.getDuration()["seconds"] );
 	$("searchtime").value = gdir.getDuration()["seconds"];
 
    new Ajax.Updater('succeed',    '/auto/search', {asynchronous:true, evalScripts:true, parameters:Form.serialize($("searchform"))});
