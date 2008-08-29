@@ -17,8 +17,8 @@ ActiveRecord::Schema.define do
    end
  
   create_table :zip_codes do |t|
-    t.string    :long
-    t.string    :lat
+    t.float    :longitdude
+    t.float    :lat
     t.string    :city
     t.string    :state
     t.string    :county
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define do
 
   create_table :gas_zips do |t|
     t.string    :parent_zip
-    t.string    :long
+    t.string    :longitude
     t.string    :lat
     t.string    :in_page_id
     t.string    :gas_mini_name
