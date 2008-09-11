@@ -17,8 +17,3 @@ task :gas_import => :environment do
 
 end
 
-
-desc "pase the gas data from msn "
-task :gas_parse => :environment do
-  puts "parse gas"
-end

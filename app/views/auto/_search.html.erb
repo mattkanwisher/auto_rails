@@ -1,13 +1,33 @@
-Trip Cost: <%=number_to_currency(@cost) %> <br>
-<%=@start %>   <b>to </b>     <%=@end %> <br>
-Distance : <%=number_with_precision(@miles,2) %> miles <br>
-Average gas cost : <%=number_to_currency(@avg_gas_price) %> <br>
-Average spd : 55mph (FAKE) <br>
-Fuel Economy: <%=@fuel_eco %>(hybrid score for car) <br>
-Trip time: <%=@time %> minutes <br>
-<br>
-<br>
-Refuel Opportunies:
-TODO:!
-
-
+	<div class="alpha moduletitle">
+		<img src="images/ttl_details.gif">
+		
+		<div style="padding-top:10px;">
+		<table class="details" width="90%" >
+			<tbody>
+			<tr>
+				<td width="60%" style=""><b>Est. Trip Time:</b></td>
+				<td><%=@time %></td>
+			</tr>
+			<tr>
+				<td style=""><b>Distance:</b></td>
+				<td><%=number_with_precision(@miles,2) %> mi</td>
+			</tr>
+			<tr>
+				<td style=""><b>Vehicle MPG:</b></td>
+				<td><%=@fuel_eco %> mpg*</td>
+			</tr>
+			<tr>
+				<td style=""><b>Avg. Price/Gal.:</b></td>
+				<td><%=number_to_currency(@avg_gas_price) %></td>
+			</tr>
+			<tr>
+				<td style=""><b>Trip Cost:</b></td>
+				<td><span style="background-color:#83c315;color:#000; padding:3px;"><b><%=number_to_currency(@cost) %></b></span></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="font:9px/1.5 Geneva, Verdana,FreeSans,sans-serif">*Avg. City & Hwy MPG</td>
+			</tr>
+			</tbody>
+		</table>
+		</div>
+	</div>

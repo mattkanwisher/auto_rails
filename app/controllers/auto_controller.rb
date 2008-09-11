@@ -11,12 +11,21 @@ class AutoController < ApplicationController
       puts "miles#{@miles}"
       puts "epa#{@epa.inspect}"
       
-      @avg_gas_price = 3.99
+      gas_stations = ZipCode.find_near_lat_long(params[:searchlat],params[:searchlong])
+      #puts gas_stations
+
+      @avg_gas_price = gas_stations.first.avg_price rescue 0
       @start = params["from"]
       @end = params["to"]
+      
+      
+      
 
       @fuel_eco = @epa.comb_mpg
-      @cost = @avg_gas_price * (@miles / @fuel_eco)
+      puts "(@miles / @fuel_eco)#{(@miles / @fuel_eco)}"
+      puts "avg_gas_price#{@avg_gas_price}"
+      @cost = @avg_gas_price.to_f * (@miles / @fuel_eco)
+      puts "@cost #{@cost}"
       @time = to_minutes(params["searchtime"].to_f) #in seconds
       render :partial => "search"
    end
@@ -50,8 +59,17 @@ class AutoController < ApplicationController
       
       def to_minutes(seconds)
 
+      h = 99
+        puts "seconds #{seconds}"
        m = (seconds/60).floor
+       puts "m #{m}"
        s = (seconds - (m * 60)).round
+       puts "s #{s}"
+
+       if(m>60)
+         h = m / 60 
+         m = m.divmod(60)[1]
+       end
 
        # add leading zero to one-digit minute
        if m < 10
@@ -62,6 +80,6 @@ class AutoController < ApplicationController
         s = "0#{s}"
         end
        # return formatted time
-       return "#{m}:#{s}"
+       return "#{h}:#{m}"
       end
 end

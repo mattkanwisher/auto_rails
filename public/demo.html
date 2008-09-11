@@ -39,14 +39,6 @@ h2
 	text-align: center;
 }
 
-p
-{
-	border: 1px solid #666;
-	overflow: hidden;
-	padding: 10px 0;
-	text-align: center;
-}
-
 .container_12
 {
 	background: #fff url(img/12_col.gif) repeat-y;
@@ -61,33 +53,36 @@ p
 </style>
 </head>
 <body>
-	<div style="background-color:black;height:50px">
-	</div>
-	<div style="background-color:grey;height:50px">
+	<div style="position: absolute; top: 0px; left: 18px; z-index: 1"><img src="images/img_logo.gif" /></div>
+	
+	<div style="background:url(images/img_bgrepeath.gif);height:115px">
 	</div>
 
-<div class="container_12">
+
+<div class="container_12" style="z-index: 2; margin-left:0px;">
 
 	<div class="grid_12" style="background-color:white">
-		<img src="/images/ttl_planyourtrip.gif" alt="Plan your trip and save on gas!" width="340" height="29" />
+		<img src="images/ttl_planyourtrip.gif" alt="Plan your trip and save on gas!" width="340" height="29" />
 	</div>
-	<div class="grid_9" style="background-color:yellow">
-		<div class="grid_5 alpha" style="background-color:white;height:301px">
-	        <table width="100%" border="0" cellspacing="7" cellpadding="5">
-	            <tr>
-	              <td><p><img src="/images/ttl_where.gif" alt="Where are you going?" width="186" height="17" /></p>
-	                  <p>
-	                    <input name="addressStart" type="text" id="addressStart" tabindex="0" value="Starting address" size="40" />
-	                  </p>
-	                <p>
+	<div class="grid_9" style="background:yellow url(images/back_yellow.gif);height:235px">
+		<div class="grid_5 alpha" style="">
+			<div class="grid_5 alpha">
+	              <img src="images/ttl_where.gif" alt="Where are you going?" width="186" height="17" />
+			</div>
+			<div class="grid_5">
+			     <input name="addressStart" type="text" id="addressStart" tabindex="0" value="Starting address" size="40" />
+	        </div>
+			<div class="clear" style="height:10px"></div>
+			<div class="grid_5">
 	                  <input name="addressEnd" type="text" id="addressEnd" tabindex="1" value="Destination address" size="40" />
-	                </p></td>
-	            </tr>
-	            <tr>
-	              <td><img src="/images/ttl_what.gif" alt="What are you driving?" width="186" height="17" /></td>
-	            </tr>
-	            <tr>
-	              <td><select name="year" id="year" tabindex="2">
+			</div>
+			<div class="clear" style="height:10px"></div>
+			<div class="grid_5">
+	              <img src="images/ttl_what.gif" alt="What are you driving?" width="186" height="17" />
+			</div>
+	        
+	 		<div class="grid_5">
+				    <select name="year" id="year" tabindex="2">
 	                  <option selected="selected">Year</option>
 	                  <option>2009</option>
 	                  <option>etc.</option>
@@ -104,26 +99,56 @@ p
 	                  <option>Accord</option>
 	                  <option>Civic</option>
 	                  <option>etc.</option>
-	                </select>              </td>
-	            </tr>
-	            <tr>
-				  <br>
-	              <td align="right"><input type="submit" name="submit" id="submit" value="Price Your Trip!" tabindex="5" /></td>
-	            </tr>
-
-	        </table>
+	                </select>
+			</div>
+			<div class="clear" style="height:10px"><br></div>
+			
+			
+			<div class="grid_5 omega" >
+			          <input type="image" src="images/img_submit.gif" value="Submit" alt="Submit" style="float:right">
+	    	</div>
 		</div>
-		<div class="grid_4 omega" style="background-color:green;height:50px">
-			<p>
-				60px
-			</p>
+		<div class="grid_4 omega" style="height:235px">
+			<div class="grid_4 alpha" style="">
+				<img src="images/ttl_details.gif">
+			</div>
+			<div class="grid_4" style="">
+				<div class="grid_2 alpha"> Trip: </div>
+				<div class="grid_2 omega"> 61 miles </div>
+			</div>
+			<div class="grid_4 omega" style="">
+				<div class="grid_2 alpha"> Trip: </div>
+				<div class="grid_2 omega"> 61 miles </div>
+			</div>
 		</div>
 	</div>
 
-	<div class="grid_6 "  style="background-color:purple;height:301px">
-		<p>
-			460px
-		</p>
+
+	<div class="grid_9"  style="">
+		<div class="grid_4"  style="">
+			<img src="images/ttl_directions.gif">
+		</div>
+		<div class="grid_1"  style="">
+		</div>
+		<div class="grid_4"  style="">
+			<img src="images/img_map.gif">
+		</div>
+	</div>
+
+
+	<div class="grid_9"  style="">
+		<div class="grid_4"  style="background-color:purple;height:301px">
+			<p>
+				460px
+			</p>
+		</div>
+		<div class="grid_1"  style="background-color:white;">
+		</div>
+		<div class="grid_4"  style="background-color:red;height:301px">
+			<p>
+				460px
+			</p>
+		</div>
 	</div>
 
 
@@ -131,7 +156,7 @@ p
 
 	<div class="grid_12 omega"  style="background-color:brown">
 		<div class="grid_1" style="background-color:green">
-			<img src="/images/img_logo_footer.gif" alt="Logo - Stingy Trips" width="47" height="53" />
+			<img src="images/img_logo_footer.gif" alt="Logo - Stingy Trips" width="47" height="53" />
 		</div>
 		<div class="grid_3" style="background-color:green">
 	       <p>StingyTrips.com - Plan your trip and save on gas!<br />
@@ -139,7 +164,7 @@ p
 		</div>
 		<div class="grid_3" style="background-color:green">
 		</div>
-		<div class="grid_3">
+		<div class="grid_4">
 			<a href="about.html">About Stingy Trips</a> | <a href="advertisers.html">Advertise with Us</a> | <a href="contact.html">Contact Us</a>
 		</div>
 	</div>

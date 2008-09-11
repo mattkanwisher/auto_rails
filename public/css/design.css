@@ -1,0 +1,43 @@
+.footer { 
+	margin-top:20px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom: 0px;
+	width:100%;
+	background-color:#dcdbdb;
+	border-top-width:4px;
+	border-style:solid;
+	border-color:#000;
+	font:11px/1.5 Geneva, Verdana,'Liberation Sans',FreeSans,sans-serif
+	}
+	
+.moduletitle {
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	}
+	
+.inputrow {
+	padding-top: 4px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	}
+	
+table.details td {
+	padding:5px;
+	padding-bottom:10px;
+	}	
+
+.linkbox p {
+	font:11px/1.5 Helvetica, Arial,'Liberation Sans',FreeSans,sans-serif
+	}
+	
+.footer { 
+	font:11px/1.5 Geneva, Verdana,'Liberation Sans',FreeSans,sans-serif
+	}
+	
+.footer a:active { 
+	font:11px/1.5 Geneva, Verdana,'Liberation Sans',FreeSans,sans-serif
+	}	

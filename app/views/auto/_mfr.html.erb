@@ -1,4 +1,4 @@
 	<option value="MFR" selected>Manufacturer</option>
 	<%  @models.each do  |model| %>
-    <option value="<%=model %>" ><%=model%></option>
+    <option value="<%=model %>" ><%=model[0..15]%></option>
 	<% end %>
