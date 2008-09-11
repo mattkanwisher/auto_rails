@@ -64,13 +64,7 @@ task :gas_parse => :environment do
     end
   end
 
-
-  ActiveRecord::Base.connection.execute("truncate table gas_zips") 
-
-  Dir["tmp_pages/*.html"].each do |file|
-    #file = Dir["tmp_pages/*.html"].first
-    puts file
-    zip = file.match("gas_(.*).html")[1]
+  def parse_file(file,zip)
     #imgMap
     doc = open(file) { |f| Hpricot(f) }
     ele = doc.search("//img[@id='imgMap']")
@@ -80,8 +74,26 @@ task :gas_parse => :environment do
       parseimagemap(ele, zip)
       ele = doc.search("//td[@id='LocalAvg']")
       parselocalavg(ele, zip)
-      ele = doc.search("//table[@id='tblDetail']")
-      parse_gas_stations_table(ele,zip)
+      #ele = doc.search("//table[@id='tblDetail']")
+      #parse_gas_stations_table(ele,zip)
     end
   end
+
+  ActiveRecord::Base.connection.execute("truncate table gas_zips") 
+  errors = []
+  Dir["tmp_pages/*.html"].each do |file|
+    begin
+      #file = Dir["tmp_pages/gas_35146.html"].first
+      puts file
+      zip = file.match("gas_(.*).html")[1]
+      if( zip.to_i > 35146)
+        parse_file(file,zip)
+      end
+    rescue Exception => e
+      puts e 
+      err = {:zip => zip, :error => e}
+      errors.push err
+    end
+  end
+  errors.each {|e| puts "#{e[:zip]}----#{e[:error]}"}
 end

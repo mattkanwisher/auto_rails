@@ -9,10 +9,10 @@ task :gas_import => :environment do
 
   zips.each_with_index do |zip, index|
     puts "zip -#{zip.id}"
-    #download_file(zip.id)
-    if index > 100
-      break
-    end
+    download_file(zip.id)
+#    if index > 100
+#      break
+#    end
   end
 
 end
