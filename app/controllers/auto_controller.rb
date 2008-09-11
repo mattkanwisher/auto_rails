@@ -12,7 +12,7 @@ class AutoController < ApplicationController
       puts "epa#{@epa.inspect}"
       
       gas_stations = ZipCode.find_near_lat_long(params[:searchlat],params[:searchlong])
-      #puts gas_stations
+      puts gas_stations
 
       @avg_gas_price = gas_stations.first.avg_price rescue 0
       @start = params["from"]
